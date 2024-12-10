@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASN Technical Academy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .content {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .extra-text {
+            display: none;
+            margin-top: 15px;
+            color: #555;
+        }
+
+        .clickable-text {
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .clickable-text:hover {
+            color: #0056b3;
+        }
+
+        .arrow {
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: white;
+    }
+
+    /* Hamburger Button */
+    .hamburger {
+      position: fixed;
+      top: 1px;
+      left: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .hamburger span {
+      display: block;
+      background: white;
+      height: 3px;
+      width: 20px;
+      margin: 5px 0;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -150px;
+      width: 150px;
+      height: 100%;
+      background: #1f1f1f;
+      transition: 0.3s;
+      padding: 3px;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 20px 0;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+    }
+   </style>
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('A_minimalistic_light_background_image_for_a_webpag.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    ol{
+      color:green;
+    }
+    </style>
+</head>
+<body>
+    <button class="hamburger" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <br/>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Settings</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+    <center>
+      <br/>
+      <br/>
+      <h1 style= "color:green;">NAM Online Academy & Virtual Service</h1>
+    </center>
+    <div class="content">
+            <span class="clickable-text" onclick="toggleText('extraText1', 'arrow1')">Our Services:
+                <span id="arrow1" class="arrow">&#9660;</span>
+            </span>
+        <div id="extraText1" class="extra-text">
+            <p>More content for the first section...</p>
+        </div>
+    </div>
+
+    <div class="content">
+            <span class="clickable-text" onclick="toggleText('extraText2', 'arrow2')">Our Programs:
+                <span id="arrow2" class="arrow">&#9660;</span>
+            </span>
+        <div id="extraText2" class="extra-text">
+            <p>This is the extra text for the second section.</p>
+            <p>More content for the second section...</p>
+        </div>
+    </div>
+
+    <div class="content">
+            <span class="clickable-text" onclick="toggleText('extraText3', 'arrow3')">Important Links:
+                <span id="arrow3" class="arrow">&#9660;</span>
+            </span>
+        <div id="extraText3" class="extra-text">
+            <p>This is the extra text for the third section.</p>
+            <p>More content for the third section...</p>
+        </div>
+    </div>
+
+    <div class="content"> 
+            <span class="clickable-text" onclick="toggleText('extraText4', 'arrow4')">Contact Us
+                <span id="arrow4" class="arrow">&#9660;</span>
+            </span>
+        <div id="extraText4" class="extra-text">
+            <p>This is the extra text for the fourth section.</p>
+            <p>More content for the fourth section...</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleText(extraTextId, arrowId) {
+            const extraText = document.getElementById(extraTextId);
+            const arrow = document.getElementById(arrowId);
+
+            if (extraText.style.display === "none" || extraText.style.display === "") {
+                extraText.style.display = "block";
+                arrow.classList.add('rotate'); // Rotate the arrow
+            } else {
+                extraText.style.display = "none";
+                arrow.classList.remove('rotate'); // Reset arrow rotation
+            }
+        }
+    </script>
+</body>
+</html>
